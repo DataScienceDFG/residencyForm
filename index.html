@@ -1,0 +1,83 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.3/jspdf.plugin.autotable.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <title>Equivalency form</title>
+  <link
+    rel="shortcut icon"
+    href="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/17089548147/fav_icon/UzsiCmhf3A-50MyX9iw_jsDZjXmgbmKicA.png"
+  />
+  <a
+    href="https://sites.google.com/a/dataflowgroup.com/home-page/home"
+    target="_blank"
+  >
+    <img src="images\Dataflow.png" style="width: 200px; height: 70px" />
+  </a>
+</head>
+
+<body>
+  <h1 class="heading">Residency</h1>
+  <br />
+  <div style="display: flex">
+    <div class="labels" style="margin-left: 50px">
+      <label for="mode_of_study">Mode of Study:</label>
+      <select id="mode_of_study" class="dropdown">
+        <option value="Online">Online</option>
+        <option value="Regular">Regular</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+    </div>
+    <div class="labels">
+      <label for="category" style="margin-left: 10px;">      Category:</label>
+      <select id="category" class="dropdown">
+        <option value="I">I</option>
+        <option value="II">II</option>
+        <option value="III">III</option>
+        <option value="Iv">IV</option>
+      </select>
+    </div>
+    <div class="labels">
+      <label for="country_of_study">Country of Study:</label>
+      <input class="dropdown" id="country_of_study" />
+    </div>
+  </div>
+
+  <script>
+    const classSelect = document.getElementById("mode_of_study");
+    const subjectSelect = document.getElementById("category");
+  </script>
+
+  <table id="myTable" class="table" style="font-size: 18px" cellspacing="40">
+    <thead>
+      <th>Tenure</th>
+      <th>Country</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>No. of Days</th>
+    </thead>
+    <tbody>
+      <td>
+        <select id="Tenure1" class="dropdown">
+          <option value="Years">Years</option>
+          <option value="Months">Months</option>
+          <option value="Days">Days</option>
+        </select>
+      </td>
+      <td><input type="text" id="country1" class="dropdown" /></td>
+      <td><input type="date" id="startDate1" class="dropdown" /></td>
+      <td><input type="date" id="endDate1" class="dropdown" /></td>
+      <td><input type="text" id="numDays1" class="dropdown" /></td>
+    </tbody>
+  </table>
+  <br />
+  <div><button onclick="addRow()" class="btn">Add Row</button></div>
+  <div><button id="savePdfBtn" class="pdfBtn">Save as PDF</button></div>
+  <div class="labels">
+    <label style="margin-bottom: 1000px" for="sum_of_days">Sum Of Days :</label>
+    <input id="sum_of_days" />
+  </div>
+
+  <script src="imageData.js"></script>
+  <script src="main.js"></script>
+</body>

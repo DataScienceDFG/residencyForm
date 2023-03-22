@@ -1,0 +1,37 @@
+.table{
+    margin-top: 40px;
+    margin-left: 130px;
+} 
+
+.heading{
+    margin-left: 520px;
+    margin-top: 5px;
+    font-size: 40px
+}
+.dropdown{width:150px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.labels{
+    flex: 1;
+    margin-right: 50px;
+    font-size: 20px
+}
+.btn{
+    margin-left: 450px;
+    font-size: 20px;
+    background-color: coral;
+    border: none;
+    float: left;
+    width: 10%;
+}
+.pdfBtn{
+    margin-right: 450px;
+    font-size: 20px;
+    background-color: coral;
+    border: none;
+    float: right;
+    width: 15%;
+}
