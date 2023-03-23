@@ -20,17 +20,11 @@ function addRow() {
   count++;
   const table = document.getElementById("myTable");
   const row = table.insertRow(-1);
-  const tenureCell = row.insertCell(0);
-  const countryCell = row.insertCell(1);
-  const startCell = row.insertCell(2);
-  const endCell = row.insertCell(3);
-  const numDaysCell = row.insertCell(4);
-  tenureCell.innerHTML =
-    '<select id="Tenure" class = "dropdown">' +
-    '<option value="Years">Years</option>' +
-    '<option value="Months">Months</option>' +
-    '<option value="Days">Days</option>' +
-    "</select>";
+  const countryCell = row.insertCell(0);
+  const startCell = row.insertCell(1);
+  const endCell = row.insertCell(2);
+  const numDaysCell = row.insertCell(3);
+ 
   countryCell.innerHTML = `<input type="text" id="country${count}" class = "dropdown">`;
   startCell.innerHTML = `<input type="date" id="startDate${count}" class = "dropdown">`;
   endCell.innerHTML = `<input type="date" id="endDate${count}"class = "dropdown">`;
@@ -104,7 +98,6 @@ document.getElementById("savePdfBtn").addEventListener("click", function () {
 
   const table = document.getElementById("myTable");
   const columns = [
-    { header: "Tenure", dataKey: "tenure" },
     { header: "Country", dataKey: "country" },
     { header: "Number of Days", dataKey: "noOfDays" },
   ];
@@ -112,13 +105,12 @@ document.getElementById("savePdfBtn").addEventListener("click", function () {
   const rows = [];
   let totalDays = 0;
   for (let i = 1; i < table.rows.length; i++) {
-    const tenure = table.rows[i].cells[0].firstChild.value;
-    const country = table.rows[i].cells[1].firstChild.value;
-    const startDate = table.rows[i].cells[2].firstChild.value;
-    const endDate = table.rows[i].cells[3].firstChild.value;
+    const country = table.rows[i].cells[0].firstChild.value;
+    const startDate = table.rows[i].cells[1].firstChild.value;
+    const endDate = table.rows[i].cells[2].firstChild.value;
     const noOfDays = calculateNoOfDays(startDate, endDate);
     totalDays += noOfDays;
-    rows.push({ tenure, country, noOfDays });
+    rows.push({country, noOfDays });
   }
   sum_of_days.value = totalDays;
   const totaldays = totalDays;
@@ -129,7 +121,7 @@ document.getElementById("savePdfBtn").addEventListener("click", function () {
     columnWHeight: 100,
     bodyStyles: { textColor: 0, cellHeight: 50 },
     columnStyles: {
-      tenure: { cellWidth: 40 },
+
       country: { cellWidth: 60 },
       noOfDays: { cellWidth: 40 },
     },
