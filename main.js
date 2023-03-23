@@ -130,7 +130,7 @@ document.getElementById("savePdfBtn").addEventListener("click", function () {
   pdf.addImage(imgData, "PNG", 5, 5, 35, 14);
   pdf.autoTable(columns, rows, tableOptions);
   pdf.setFontSize(22);
-  pdf.text(80, 25, "Residency");
+  pdf.text(80, 25, "Residency Calculator");
   pdf.setFontSize(16);
   pdf.text(20, 50, "Mode of study");
   pdf.text(20, 60, mode_of_study);
